@@ -78,7 +78,7 @@ export default function Skils() {
                ● Atomic Design <br /> 
                ● Микрофронты  <br />
                ● Микросервисы <br />
-              ● Algartims  & Data Structur
+              
              </p>
          </div>
 
