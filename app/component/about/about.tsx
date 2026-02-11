@@ -47,20 +47,6 @@ const About = () => {
           {t("about")}
         </p>
 
-        <div className="flex items-center gap-2 mt-4">
-          
-          <a href="https://icorp.uz/">
-        <Button variant={"outline"} className='border-white text-white pt-5 pb-5 w-40 hover:bg-white hover:text-black '>
-         {t("about_company")}
-        </Button>
-          </a>
-
-          <a href="/files/Resume.pdf" download>
-        <Button variant={"outline"} className='border-white text-white pt-5 pb-5 w-40 hover:bg-white hover:text-black '>
-         {t("resume_download")}
-        </Button>
-        </a>
-        </div>
       </div>
 
       <div>

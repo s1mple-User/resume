@@ -10,8 +10,8 @@ import MyCarouselFigma from "./component/corusel/coruselFigma"
 export default function Page() {
   return <div className="container">
       <About/>
+       <MyCarousel/>
         <MyCarouselFigma/>
   <Skils/>
-  <MyCarousel/>
   </div>
 }

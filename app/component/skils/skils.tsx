@@ -76,7 +76,7 @@ export default function Skils() {
              <p>
                ● Модульная  архитектура <br />
                ● Atomic Design <br /> 
-               ● Микрофронты  <br />
+               ● FSD  <br />
                ● Микросервисы <br />
               
              </p>
@@ -98,7 +98,7 @@ export default function Skils() {
         <TabsContent value="backend">
            <ul className="list-disc ml-5 space-y-1 mt-5">
     <li>Node.js, Express.js</li>
-    <li>MongoDB, CI/CD, Docker</li>
+    <li>MongoDB, CI/CD</li>
   </ul>
         </TabsContent>
             </div>
