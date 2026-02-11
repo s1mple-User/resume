@@ -2,13 +2,13 @@ import { create } from "zustand";
 
 interface StoreState {
  
-  experienceRef: HTMLElement | null; 
-  projectsRef: HTMLElement | null;
-  technologyRef: HTMLElement | null;
+  experienceRef: any | null; 
+  projectsRef: any | null;
+  technologyRef: any | null;
 
-  setExperienceRef: (el: HTMLElement | null) => void;
-  setProjectsRef: (el: HTMLElement | null) => void;
-  setTechnologyRef: (el: HTMLElement | null) => void;
+  setExperienceRef: (el: any | null) => void;
+  setProjectsRef: (el: any | null) => void;
+  setTechnologyRef: (el: any | null) => void;
 }
 
 const useStoreRef = create<StoreState>((set) => ({
