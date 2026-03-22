@@ -6,6 +6,8 @@ import img5 from "./images/5.png";
 import img6 from "./images/6.jpg";
 import img7 from "./images/7.png";
 import img8 from "./images/8.png";
+import img9 from "./images/9.png"
+import img10 from "./images/10.png"
 
 export const imgArr = [
     {"img":img1,"link":"https://course-client-five.vercel.app/"},
@@ -15,13 +17,16 @@ export const imgArr = [
     {"img":img5,"link":"https://shop-test-project.vercel.app/"},
     {"img":img7,"link":"https://vue-music-theta-orpin.vercel.app/"},
     {"img":img8,"link":"https://front-vue-analitic-front-test.vercel.app/"},
+      {"img":img9,"link":"https://cick-starter-deploy.vercel.app/"},
+        {"img":img10,"link":"https://test-vue-tau-hazel.vercel.app/"},
     ];
 
 export const imgArrFigma = [
     {"img":img1,"link":"https://www.figma.com/design/rhK3TbCEZuHcrlDLhAv2YS/Untitled?m=auto&t=GQW3CYniBcj7Ge05-6"},
     {"img":img3,"link":"https://www.figma.com/design/GQeOkdUylYbXtScrt6nmZg/Untitled?node-id=8-2&p=f&t=GQW3CYniBcj7Ge05-0"},
     {"img":img4,"link":"https://www.figma.com/design/xAkbkWPgiVSVsBNGGyd8uU/Untitled?m=auto&t=GQW3CYniBcj7Ge05-6"},
-    {"img":img6,"link":"https://www.figma.com/design/td7K0V1VK2LvcR5iFxqiU2/Untitled?m=auto&t=GQW3CYniBcj7Ge05-6"}
+    {"img":img6,"link":"https://www.figma.com/design/td7K0V1VK2LvcR5iFxqiU2/Untitled?m=auto&t=GQW3CYniBcj7Ge05-6"},
+    {"img":img9,"link":"https://www.figma.com/design/x4dSoBhC8ZX0HHvCB5ydem/Untitled?node-id=0-1&t=p2ahLl0HhyNLlUVz-1"}
 ];
 
 
