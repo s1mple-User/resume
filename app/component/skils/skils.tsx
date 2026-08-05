@@ -1,107 +1,148 @@
 'use client'
 
-import { AppWindowIcon, CodeIcon } from "lucide-react"
+import { useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
+import AOS from 'aos'
+import 'aos/dist/aos.css';
+
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import useStoreRef from "@/store/store";
+import useStoreRef from "@/store/store"
 
-export default function Skils() {
-    const {t} =useTranslation()
-    const principlesRef = useRef(null)
-    const setTechnologyRefFunc  = useStoreRef(state => state.setTechnologyRef)
-    useEffect(() => {
-      setTechnologyRefFunc(principlesRef)
+export default function Skills() {
+  const { t } = useTranslation()
+  const principlesRef = useRef<HTMLParagraphElement>(null)
+  const setTechnologyRefFunc = useStoreRef((state) => state.setTechnologyRef)
+
+  useEffect(() => {
+    setTechnologyRefFunc(principlesRef)
     AOS.init({
-      duration: 800,   
-    });
-  }, [principlesRef]);
+      duration: 800,
+    })
+  }, [setTechnologyRefFunc])
 
   return (
-    <div className="flex w-[400px] mt-64 p-4 ml-[160px]" data-aos="fade-up"   data-aos-anchor-placement="center-bottom">
-      <Tabs defaultValue="code">
-        <TabsList className="w-[1400px] border-r-0 relative top-2 ">
+    <section 
+      className="max-w-6xl mx-auto my-20 px-6" 
+      data-aos="fade-up" 
+      data-aos-anchor-placement="center-bottom"
+    >
+      <Tabs   data-aos="fade-up"  defaultValue="code" className="w-full">
+        
+        <TabsList className="grid w-full grid-cols-3 bg-zinc-800 p-1.5 h-auto gap-2 rounded-t-2xl border border-zinc-700/50">
           <TabsTrigger
             value="code"
-            className=" bg-[#455A64] w-[300px] text-black rounded-l-md rounded-r-none p-5
-                       data-[state=active]:bg-[#000000] data-[state=active]:text-white"
+            className="text-gray-300 py-4 text-lg md:text-xl font-bold rounded-xl
+                       data-[state=active]:bg-black data-[state=active]:text-white 
+                       data-[state=active]:shadow-lg transition-all duration-300"
           >
-            <p ref={principlesRef}>{t("principles")}</p>
+            <span ref={principlesRef}>{t("principles")}</span>
           </TabsTrigger>
 
           <TabsTrigger
             value="frontend"
-            className=" w-[300px] bg-[#455A64] text-black rounded-none p-5
-                       data-[state=active]:bg-[#000000] data-[state=active]:text-white"
+            className="text-gray-300 py-4 text-lg md:text-xl font-bold rounded-xl
+                       data-[state=active]:bg-black data-[state=active]:text-white 
+                       data-[state=active]:shadow-lg transition-all duration-300"
           >
             Frontend
           </TabsTrigger>
 
           <TabsTrigger
             value="backend"
-            className=" w-[300px] bg-[#455A64] text-black  rounded-r-md rounded-l-none  p-5
-                       data-[state=active]:bg-[#000000] data-[state=active]:text-white"
+            className="text-gray-300 py-4 text-lg md:text-xl font-bold rounded-xl
+                       data-[state=active]:bg-black data-[state=active]:text-white 
+                       data-[state=active]:shadow-lg transition-all duration-300"
           >
             Backend
           </TabsTrigger>
         </TabsList>
 
-            <div className="w-full h-[200px] text-white bg-black">
-        <TabsContent value="code">
-          <div className="flex gap-20 ml-20 mt-5">
-            <p >
-            ● MVC <br /> 
-            ● MVVM <br /> 
-            ● KISS <br /> 
-            ● DRY <br /> 
-            ● YAGNI <br /> 
-            ● SOLID
-          </p>
-
-            <p >
-              ● TDD <br /> 
-              ● REST API <br /> 
-              ● OOP <br /> 
-              ● Unit <br /> 
-              ● Integration
-            </p>
-
-             <p>
-               ● Модульная  архитектура <br />
-               ● Atomic Design <br /> 
-               ● FSD  <br />
-              
-             </p>
-         </div>
-
-        </TabsContent>
-
-        <TabsContent value="frontend">
+        <div className="w-full min-h-[340px] text-white bg-black p-8 md:p-12 rounded-b-2xl border-x border-b border-zinc-800 shadow-2xl mt-0">
           
-        <ul className="list-disc ml-10 mt-5 space-y-1">
-    <li>HTML, CSS, JS, Bootstrap, Tailwind CSS</li>
-    <li>JavaScript, TypeScript</li>
-    <li>React/Vue, Next/Nuxt, Redux Toolkit, Vite Zustand,piana i18next </li>
-    <li>Figma</li>
-  </ul>
+          <TabsContent value="code" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="space-y-3">
 
-        </TabsContent>
+                <ul className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>MVC / MVVM</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>KISS / DRY / YAGNI</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>SOLID Principles</li>
+                </ul>
+              </div>
 
-        <TabsContent value="backend">
-           <ul className="list-disc ml-5 space-y-1 mt-5">
-    <li>Node.js, Express.js</li>
-    <li>MongoDB</li>
-  </ul>
-        </TabsContent>
+              <div className="space-y-3">
+                
+                <ul className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>TDD</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>REST API</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>OOP</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>Unit & Integration Testing</li>
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+      
+                <ul className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>Модульная архитектура</li>
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>Atomic Design</li>
+                </ul>
+              </div>
             </div>
+          </TabsContent>
+
+          <TabsContent value="frontend" className="mt-0">
+            <div className="flex flex-wrap gap-32 text-base md:text-lg">
+                    <div className="space-y-3">
+              {[
+                "HTML5", "CSS3", "JavaScript", "TypeScript", 
+                "React", "Next.js", 
+              ].map((skill) => (
+  
+             <ul  key={skill} className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>   {skill}</li>
+                </ul>
+
+              ))}
+            </div>
+
+                  <div className="space-y-3">
+              {[
+                "Redux Toolkit", "Zustand", 
+                "Tailwind CSS", "Bootstrap", "Vite", "i18next", 
+                "Figma "
+              ].map((skill) => (
+  
+             <ul key={skill}  className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li  className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>   {skill}</li>
+                </ul>
+
+              ))}
+            </div>
+                 </div>
+          </TabsContent>
+
+          <TabsContent value="backend" className="mt-0">
+            <div className="flex flex-wrap">
+
+                  <div className="space-y-3">
+              {[
+                "Node.js", "Express.js", "MongoDB", "Mongoose"
+              ].map((skill) => (
+                <ul key={skill}  className="space-y-3 text-lg md:text-xl text-zinc-200 font-medium">
+                  <li   className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-sky-500"></span>   {skill}</li>
+                </ul>
+              ))}
+            </div>
+            </div>
+          </TabsContent>
+
+        </div>
       </Tabs>
-    </div>
+    </section>
   )
 }
